@@ -11,7 +11,7 @@ namespace DockerDependencyTest
     public class DependOnSqlTest
     {
         // Run EF Migrations\DBUp script to prepare database before running your tests.
-        const string ConnectionString = "Data Source=localhost,1234;Initial Catalog=master;PersistSecurityInfo=True;User ID=sa;Password=P@ssW0rd!";
+        const string ConnectionString = "Data Source=database;Initial Catalog=master;PersistSecurityInfo=True;User ID=sa;Password=P@ssW0rd!";
 
         [Fact]
         public async Task ConnectToSqlTest()

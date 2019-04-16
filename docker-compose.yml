@@ -5,13 +5,13 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-      args:
-        waitForContainer: database:1234
+    environment:
+      WAIT_HOSTS: database:1433
+    volumes:
+        - /opt/vsts/work/_temp:/var/temp
 
   database:
     image: mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
     environment:
         SA_PASSWORD: "P@ssW0rd!"
         ACCEPT_EULA: "Y"
-    ports:
-      - "1234:1433"
